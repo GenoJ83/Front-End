@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geno Joshua's Personal Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 1.5rem 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Geno Joshua</h1>
+    <p>Welcome to my personal portfolio page!</p>
+  </header>
+  
+  <div class="container">
+    <section>
+      <h2>Personal Details</h2>
+      <ul>
+        <li>Full Name: Geno Joshua</li>
+        <li>Student ID: 12345678</li>
+        <li>Course and Year: Year 2 Computer Science</li>
+        <li>Hobbies and Interests: Writing, Fitness, and Web Development</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Profile Picture</h2>
+      <img src="profile.jpg" alt="Profile Picture">
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Hobby Video</h2>
+      <video controls width="100%">
+        <source src="hobby.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Year 1 Semester 1 Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Grade</th>
+            <th>Credit Units</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CS101</td>
+            <td>Introduction to Programming</td>
+            <td>A</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS102</td>
+            <td>Data Structures</td>
+            <td>B+</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS103</td>
+            <td>Computer Architecture</td>
+            <td>A-</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS104</td>
+            <td>Web Development</td>
+            <td>A</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS105</td>
+            <td>Database Systems</td>
+            <td>B</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Feedback</h2>
+      <form action="your-server-endpoint" method="POST">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" placeholder="Enter your username" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div>
+          <label for="feedback">Tell me about yourself</label>
+          <textarea name="feedback" id="feedback" rows="4" placeholder="Please share your thoughts..." required></textarea>
+        </div>
+        <div class="button-container">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Contact Information</h2>
+      <p>Email: <a href="mailto:genojoshua@example.com">genojoshua@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
+      <p>GitHub: <a href="https://github.com/genojoshua" target="_blank">github.com/genojoshua</a></p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Career Goals</h2>
+      <p>I aim to become a full-stack web developer with a focus on creating innovative and user-friendly web applications. I am passionate about learning new technologies and contributing to impactful projects.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Geno Joshua. All rights reserved.</p>
+  </footer>
+</body>
+</html>
