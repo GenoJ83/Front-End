@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geno Joshua's Personal Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -71,6 +72,20 @@
     .button-container {
       display: flex;
       justify-content: center;
+    }
+    .skills-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .skills-list li {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .skills-list li i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #333;
     }
   </style>
 </head>
@@ -159,19 +174,31 @@
     <hr>
 
     <section>
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-js-square"></i> JavaScript</li>
+        <li><i class="fab fa-react"></i> React</li>
+        <li><i class="fab fa-node"></i> Node.js</li>
+        <li><i class="fas fa-database"></i> Database Management (SQL)</li>
+        <li><i class="fab fa-git"></i> Version Control (Git, GitHub)</li>
+        <li><i class="fas fa-cogs"></i> Problem-Solving and Algorithms</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
       <h2>Feedback</h2>
       <form action="your-server-endpoint" method="POST">
         <div>
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Enter your username" required>
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" required>
         </div>
         <div>
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Enter your password" required>
-        </div>
-        <div>
-          <label for="feedback">Tell me about yourself</label>
-          <textarea name="feedback" id="feedback" rows="4" placeholder="Please share your thoughts..." required></textarea>
+          <label for="question">Ask me something</label>
+          <textarea name="question" id="question" rows="4" placeholder="What would you like to ask?" required></textarea>
         </div>
         <div class="button-container">
           <input type="submit" value="Submit">
