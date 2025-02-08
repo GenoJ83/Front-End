@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geno Joshua's Personal Portfolio</title>
+  <!--External CSS styling-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!--internal css styling-->
+  <style>
+    h1{
+      color:beige;
+      font-size:40px;
+
+    }
+    li{
+      font-size:15px;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 10;
+      background-color: #f9f9f9;
+      border: 2px solid black;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+    .profile-picture {
+      width: 120px;
+      height: 160px;
+      display: block;
+      margin: 1rem auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 1.5rem 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+    .skills-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .skills-list li {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .skills-list li i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #333;
+    
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Geno Joshua</h1>
+    <!--Inline Styling-->
+    <p style ="color:aqua">Welcome to my personal portfolio page!</p>
+  </header>
+  
+  <div class="container">
+    <section>
+     
+      <h2>Personal Details</h2>
+      <ul>
+        <li>Full Name: Geno Joshua</li>
+        <li>Student ID: B20233</li>
+        <li>Course and Year: Year 2 Computer Science</li>
+        <li>Hobbies and Interests: Gaming, Fitness, and Web Development</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Profile Picture</h2>
+      <img src="Pic 2.jpeg" alt="Profile Picture" class="profile-picture">
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Hobby Video</h2>
+      <video controls width="100%">
+        <source src="https://youtu.be/rXsH41KQiTM" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Year 1 Semester 1 Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Grade</th>
+            <th>Credit Units</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CS101</td>
+            <td>Structured Programming</td>
+            <td>A</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>CS102</td>
+            <td>Essential Hardware and Software Concepts</td>
+            <td>A</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>CS103</td>
+            <td>Fundamentals of Computing</td>
+            <td>A</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>CS104</td>
+            <td>Discrete Mathematics</td>
+            <td>B</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS105</td>
+            <td>Writing and study skills</td>
+            <td>B+</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>CS106</td>
+            <td>Understanding the Old Testament</td>
+            <td>A</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-js-square"></i> JavaScript</li>
+        <li><i class="fab fa-react"></i> React</li>
+        <li><i class="fab fa-node"></i> Node.js</li>
+        <li><i class="fas fa-database"></i> Database Management (SQL)</li>
+        <li><i class="fab fa-git"></i> Version Control (Git, GitHub)</li>
+        <li><i class="fas fa-cogs"></i> Problem-Solving and Algorithms</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Feedback</h2>
+      <form action="your-server-endpoint" method="POST">
+        <div>
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
+        <div>
+          <label for="question">Ask me something</label>
+          <textarea name="question" id="question" rows="4" placeholder="What would you like to ask?" required></textarea>
+        </div>
+        <div class="button-container">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Contact Information</h2>
+      <p>Email: <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
+      <p>GitHub: <a href="https://github.com/GenoJ83" target="_blank">github.com/GenoJ83</a></p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Career Goals</h2>
+      <p>I aim to become a full-stack web developer with a focus on creating innovative and user-friendly web applications. I am passionate about learning new technologies and contributing to impactful projects.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Geno Joshua. All rights reserved.</p>
+  </footer>
+</body>
+</html>
