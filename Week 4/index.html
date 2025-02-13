@@ -1,209 +1,158 @@
-Share
-
-
-You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geno Joshua's Personal Portfolio</title>
-  <!--External CSS styling-->
+  <title>Geno Joshua's Portfolio</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!--Internal Styling-->
   <style>
-    h1{
-      color:beige;
-      font-size:40px;
-
-    }
-    li{
-      font-size:15px;
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f9f9f9;
     }
     
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 10;
-      background-color: #f9f9f9;
-      border: 2px solid black;
-    }
+    /* Header */
     header {
-      background: #333;
-      color: #fff;
-      padding: 1rem 0;
+      background: #1e1e1e;
+      padding: 2rem 0;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+    header h1 {
+      color: #4DB6AC;
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      color: #BBDEFB;
+      font-size: 1.2rem;
+    }
+    
+    /* Container */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      background: #fff;
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1rem 0;
+    
+    /* Sections */
+    h2 {
+      color: #4DB6AC;
+      border-bottom: 2px solid #4DB6AC;
+      padding-bottom: 0.5rem;
     }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    
+    /* Profile Picture */
     .profile-picture {
-      width: 120px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
       display: block;
-      margin: 1rem auto;
+      margin: 1.5rem auto;
+      border: 4px solid #4DB6AC;
     }
+    
+    /* Table */
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 1rem 0;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
+      background: #2a2a2a;
+      color: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
     }
     th, td {
       padding: 1rem;
       text-align: left;
+      border-bottom: 1px solid #444;
     }
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin-right: 1rem;
+    th {
+      background: #4DB6AC;
+      color: #121212;
     }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-      margin-top: 2rem;
+    
+    /* Skills */
+    .skills-list li {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
     }
-    hr {
-      border: 0;
-      border-top: 1px solid #ddd;
-      margin: 1.5rem 0;
+    .skills-list i {
+      font-size: 1.8rem;
+      margin-right: 12px;
+      color: #4DB6AC;
     }
+    
+    /* Form */
     form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    textarea {
-      resize: vertical;
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #4DB6AC;
+      border-radius: 6px;
+      background: #2a2a2a;
+      color: #f9f9f9;
     }
-    .button-container {
-      display: flex;
-      justify-content: center;
+    .button-container input {
+      background: #4DB6AC;
+      color: #121212;
+      font-weight: bold;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
-    .skills-list {
-      list-style-type: none;
-      padding-left: 0;
+    .button-container input:hover {
+      background: #26A69A;
     }
-    .skills-list li {
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
-    }
-    .skills-list li i {
-      margin-right: 10px;
-      font-size: 1.5rem;
-      color: #333;
     
+    /* Footer */
+    footer {
+      background: #1e1e1e;
+      color: #BBDEFB;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Geno Joshua</h1>
-    <!--Inline Styling-->
-    <p style ="color:aqua">Welcome to my personal portfolio page!</p>
+    <p>Welcome to my personal portfolio page!</p>
   </header>
-  
   <div class="container">
     <section>
-     
       <h2>Personal Details</h2>
       <ul>
         <li>Full Name: Geno Joshua</li>
-        <li>Student ID: B20233</li>
         <li>Course and Year: Year 2 Computer Science</li>
-        <li>Hobbies and Interests: Gaming, Fitness, and Web Development</li>
+        <li>Hobbies: Gaming, Fitness, Web Development</li>
       </ul>
     </section>
-
-    <hr>
-
     <section>
       <h2>Profile Picture</h2>
       <img src="Pic 2.jpeg" alt="Profile Picture" class="profile-picture">
     </section>
-
-    <hr>
-
-    <section>
-      <h2>Hobby Video</h2>
-      <video controls width="100%">
-        <source src="https://youtu.be/rXsH41KQiTM" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>Year 1 Semester 1 Results</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Course Code</th>
-            <th>Course Title</th>
-            <th>Grade</th>
-            <th>Credit Units</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CS101</td>
-            <td>Structured Programming</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS102</td>
-            <td>Essential Hardware and Software Concepts</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS103</td>
-            <td>Fundamentals of Computing</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS104</td>
-            <td>Discrete Mathematics</td>
-            <td>B</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>CS105</td>
-            <td>Writing and study skills</td>
-            <td>B+</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>CS106</td>
-            <td>Understanding the Old Testament</td>
-            <td>A</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <hr>
-
     <section>
       <h2>Skills</h2>
       <ul class="skills-list">
@@ -211,49 +160,19 @@ You said:
         <li><i class="fab fa-css3-alt"></i> CSS</li>
         <li><i class="fab fa-js-square"></i> JavaScript</li>
         <li><i class="fab fa-react"></i> React</li>
-        <li><i class="fab fa-node"></i> Node.js</li>
-        <li><i class="fas fa-database"></i> Database Management (SQL)</li>
-        <li><i class="fab fa-git"></i> Version Control (Git, GitHub)</li>
-        <li><i class="fas fa-cogs"></i> Problem-Solving and Algorithms</li>
       </ul>
     </section>
-
-    <hr>
-
     <section>
       <h2>Feedback</h2>
-      <form action="your-server-endpoint" method="POST">
-        <div>
-          <label for="name">Your Name</label>
-          <input type="text" name="name" id="name" placeholder="Enter your name" required>
-        </div>
-        <div>
-          <label for="question">Ask me something</label>
-          <textarea name="question" id="question" rows="4" placeholder="What would you like to ask?" required></textarea>
-        </div>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="question" rows="4" placeholder="Ask me something" required></textarea>
         <div class="button-container">
           <input type="submit" value="Submit">
         </div>
       </form>
     </section>
-
-    <hr>
-
-    <section>
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
-      <p>GitHub: <a href="https://github.com/GenoJ83" target="_blank">github.com/GenoJ83</a></p>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>Career Goals</h2>
-      <p>I aim to become a full-stack web developer with a focus on creating innovative and user-friendly web applications. I am passionate about learning new technologies and contributing to impactful projects.</p>
-    </section>
   </div>
-
   <footer>
     <p>&copy; 2025 Geno Joshua. All rights reserved.</p>
   </footer>
