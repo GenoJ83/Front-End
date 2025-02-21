@@ -1,4 +1,4 @@
-// If statements
+// Exercise 1: If statements
 let temperature = 25;
 
 if (temperature > 30) {
