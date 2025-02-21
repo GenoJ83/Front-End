@@ -20,7 +20,7 @@ if (score >= 70) {
     console.log("Not Eligible for Admission.");
 }
 
-//
+// Acceess to clean water
 let waterAvailable = 300;
 
 if (waterAvailable > 500) {
@@ -30,4 +30,6 @@ if (waterAvailable > 500) {
 } else {
     console.log("Water shortage.");
 }
+
+//Nested if statement 
 
