@@ -20,7 +20,7 @@ if (score >= 70) {
     console.log("Not Eligible for Admission.");
 }
 
-// Acceess to clean water
+//Exercise 3: Acceess to clean water
 let waterAvailable = 300;
 
 if (waterAvailable > 500) {
