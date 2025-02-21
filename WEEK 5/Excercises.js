@@ -31,7 +31,7 @@ if (waterAvailable > 500) {
     console.log("Water shortage.");
 }
 
-//Nested if statement 
+//Exercise 4: Nested if statement 
 let expired = false;
 let quality = 7;
 
