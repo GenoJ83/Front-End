@@ -9,7 +9,7 @@ if (temperature > 30) {
     console.log("It's cold.");
 }
 
-// Admission eligibility
+//Exercise 2:  Admission eligibility
 let score = 55;
 
 if (score >= 70) {
