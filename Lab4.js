@@ -44,7 +44,7 @@ for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
 
-//Print right angled triangle
+//Exercise 7: Print right angled triangle
 for (let i = 1; i <= 10; i++) {
     if (i % 2 === 0) {
         continue;
