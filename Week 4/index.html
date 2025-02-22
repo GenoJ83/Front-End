@@ -6,81 +6,80 @@
   <title>Geno Joshua's Personal Portfolio</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    /* General Styles */
+    :root {
+      --background-color: #121212;
+      --text-color: #f9f9f9;
+      --header-background: #1e1e1e;
+      --accent-color: #4DB6AC;
+      --secondary-text-color: #BBDEFB;
+      --input-background: #2a2a2a;
+      --button-hover: #26A69A;
+    }
+
+    .light-mode {
+      --background-color: #f9f9f9;
+      --text-color: #121212;
+      --header-background: #e0e0e0;
+      --accent-color: #00796B;
+      --secondary-text-color: #455A64;
+      --input-background: #ffffff;
+      --button-hover: #004D40;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      color: #f9f9f9;
+      background-color: var(--background-color);
+      color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    body.light-mode {
-      background-color: #f9f9f9;
-      color: #121212;
-    }
-
-    /* Header */
     header {
-      background: #1e1e1e;
+      background: var(--header-background);
       padding: 2rem 0;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: background 0.3s ease;
     }
-
-    body.light-mode header {
-      background: #e0e0e0;
-    }
-
     header h1 {
-      color: #4DB6AC;
+      color: var(--accent-color);
       font-size: 3rem;
       margin: 0;
     }
     header p {
-      color: #BBDEFB;
+      color: var(--secondary-text-color);
       font-size: 1.2rem;
     }
 
-    /* Toggle Button */
-    .toggle-btn {
+    .toggle-button {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: #4DB6AC;
-      color: #121212;
+      background: var(--accent-color);
+      color: var(--background-color);
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .toggle-btn:hover {
-      background: #26A69A;
+    .toggle-button:hover {
+      background: var(--button-hover);
     }
 
-    /* Container */
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background: #1e1e1e;
+      background: var(--header-background);
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
     }
 
-    body.light-mode .container {
-      background: #ffffff;
-    }
-
-    /* Sections */
     h2 {
-      color: #4DB6AC;
-      border-bottom: 2px solid #4DB6AC;
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
       padding-bottom: 0.5rem;
     }
     ul {
@@ -91,17 +90,15 @@
       margin: 0.5rem 0;
     }
 
-    /* Profile Picture */
     .profile-picture {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       display: block;
       margin: 1.5rem auto;
-      border: 4px solid #4DB6AC;
+      border: 4px solid var(--accent-color);
     }
 
-    /* Skills */
     .skills-list li {
       display: flex;
       align-items: center;
@@ -110,10 +107,9 @@
     .skills-list i {
       font-size: 1.8rem;
       margin-right: 12px;
-      color: #4DB6AC;
+      color: var(--accent-color);
     }
 
-    /* Form */
     form {
       display: flex;
       flex-direction: column;
@@ -121,21 +117,14 @@
     }
     input, textarea {
       padding: 0.8rem;
-      border: 1px solid #4DB6AC;
+      border: 1px solid var(--accent-color);
       border-radius: 6px;
-      background: #2a2a2a;
-      color: #f9f9f9;
-      transition: background 0.3s ease, color 0.3s ease;
+      background: var(--input-background);
+      color: var(--text-color);
     }
-
-    body.light-mode input, body.light-mode textarea {
-      background: #f0f0f0;
-      color: #121212;
-    }
-
     .button-container input {
-      background: #4DB6AC;
-      color: #121212;
+      background: var(--accent-color);
+      color: var(--background-color);
       font-weight: bold;
       border: none;
       padding: 0.8rem;
@@ -144,21 +133,15 @@
       transition: background 0.3s ease;
     }
     .button-container input:hover {
-      background: #26A69A;
+      background: var(--button-hover);
     }
 
-    /* Footer */
     footer {
-      background: #1e1e1e;
-      color: #BBDEFB;
+      background: var(--header-background);
+      color: var(--secondary-text-color);
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
-      transition: background 0.3s ease;
-    }
-
-    body.light-mode footer {
-      background: #e0e0e0;
     }
   </style>
 </head>
@@ -166,7 +149,7 @@
   <header>
     <h1>Geno Joshua</h1>
     <p>Welcome to my personal portfolio page!</p>
-    <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+    <button class="toggle-button" onclick="toggleMode()">Toggle Mode</button>
   </header>
   <div class="container">
     <section>
