@@ -18,3 +18,5 @@ while (i <= 100) {
 }
 
 console.log(`The sum is ${sum}`);
+
+//User input validation
