@@ -19,7 +19,7 @@ while (i <= 100) {
 
 console.log(`The sum is ${sum}`);
 
-//User input validation
+//Exercise 4: User input validation
 let number;
 
 do {
