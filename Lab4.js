@@ -8,7 +8,7 @@ for (let i = 1; i <= 10; i++) {
     console.log(`5 x ${i} = ${5 * i}`);
 }
 
-//Sum of numbers
+//Exercise 3: Sum of numbers
 let sum = 0;
 let i = 1;
 
