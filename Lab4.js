@@ -27,3 +27,11 @@ do {
 } while (isNaN(number) || number < 1 || number > 10);
 
 console.log(`You entered: ${number}`);
+
+//Breaking out of a loop
+for (let i = 1; i <= 10; i++) {
+    if (i === 7) {
+        break;
+    }
+    console.log(i);
+}
