@@ -10,12 +10,14 @@
         }
     </style>
 </head>
-<body>
+<body onload="greet()">
     <button onclick="alert('Hello Geno')">Click me</button>
     <p id="text">This is an HTML, CSS and JavaScript Fusion</p>
     <button onclick="document.getElementById('text').innerHTML = 'Internal JavaScript'">Click me</button>
 <script>
-    function greet()
+    function greet(){
+        alert('Welcome to Dynamic Application');
+    }
 </script>
 </body>
 </html>
