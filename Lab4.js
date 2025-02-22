@@ -36,7 +36,7 @@ for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
 
-//Skip even numbers
+//Exercise 6: Skip even numbers
 for (let i = 1; i <= 10; i++) {
     if (i % 2 === 0) {
         continue;
