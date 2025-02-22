@@ -9,3 +9,12 @@ for (let i = 1; i <= 10; i++) {
 }
 
 //Sum of numbers
+let sum = 0;
+let i = 1;
+
+while (i <= 100) {
+    sum += i;
+    i++;
+}
+
+console.log(`The sum is ${sum}`);
