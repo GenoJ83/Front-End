@@ -4,31 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Application</title>
-    <link rel ="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
         body {
             background-color: brown;
+        }
+        input {
+            margin-top: 10px;
+            padding: 5px;
         }
     </style>
 </head>
 <body onload="greet()">
     <button onclick="alert('Hello Geno')">Click me</button>
-    <p id="text">This is an HTML, CSS and JavaScript Fusion</p>
+    <p id="text">This is an HTML, CSS, and JavaScript Fusion</p>
     <button onclick="document.getElementById('text').innerHTML = 'Inline JavaScript'">Change text</button>
     <button id="click">Internal JavaScript click</button>
-    <button onclick="document.body.style.backgroundColor = 'red'">Change Background to Red</button>
-<script src ="./action.js">
-   // function greet(){
-    //    alert('Welcome to the Dynamic Application');
-   // }
-    const buttonId= document.getElementById("click");
-    document.getElementById("click").onclick = function(){
-        alert("Button was clicked.")
-    }
-    buttonId.onmouseover = function(){
-        buttonId.style.color="red";
-    }
-    
-</script>
+
+    <!-- New input and button for custom background color -->
+    <div>
+        <input type="text" id="colorInput" placeholder="Enter a color (e.g., red, #ff0000)">
+        <button onclick="changeBackgroundColor()">Change Background Color</button>
+    </div>
+
+    <script>
+        // Function to greet on page load
+        function greet() {
+            alert('Welcome to the Dynamic Application');
+        }
+
+        // Event listeners for the "Internal JavaScript click" button
+        const buttonId = document.getElementById("click");
+
+        // Click event
+        buttonId.onclick = function () {
+            alert("Button was clicked.");
+        };
+
+        // Mouseover event to change text color
+        buttonId.onmouseover = function () {
+            buttonId.style.color = "red";
+        };
+
+        // Mouseout event to revert text color
+        buttonId.onmouseout = function () {
+            buttonId.style.color = "black";
+        };
+
+        // Function to change background color based on user input
+        function changeBackgroundColor() {
+            const colorInput = document.getElementById("colorInput").value;
+            if (colorInput) {
+                document.body.style.backgroundColor = colorInput;
+            } else {
+                alert("Please enter a valid color.");
+            }
+        }
+    </script>
 </body>
 </html>
