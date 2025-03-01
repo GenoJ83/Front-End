@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <>
        <button className="square">X</button>
        <button className="square">X</button>
        <button className="square">X</button>
@@ -13,7 +13,7 @@ function App() {
        <button className="square">X</button>
        <button className="square">X</button>
        <button className="square">X</button>
-    </div>
+    </>
    
 
   );
