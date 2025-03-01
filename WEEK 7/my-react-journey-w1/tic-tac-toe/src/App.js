@@ -3,6 +3,11 @@ import './App.css';
 
 //Component
 function Square({value}) {
+
+  function handleButtonClick(){
+    console.log("click action", value)
+
+  }
   return <button className="square">value</button>
 }
 function App() {
