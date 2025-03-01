@@ -3,6 +3,7 @@ import './App.css';
 
 //Component
 function Square({value}) {
+  const [name, setname] = useState(null);
 
   function handleButtonClick(){
     console.log("click action", value);
