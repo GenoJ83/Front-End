@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+
+//Component
 function square() {
   return <button className="square">1</button>
 }
