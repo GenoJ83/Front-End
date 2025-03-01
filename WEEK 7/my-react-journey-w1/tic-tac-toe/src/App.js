@@ -19,9 +19,9 @@ function App() {
        <Square/>
        </div>
        <div className="board-row">
-       <button className="square">7</button>
-       <button className="square">8</button>
-       <button className="square">9</button>
+       <Square/>
+       <Square/>
+       <Square/>
        </div>
     </>
    
