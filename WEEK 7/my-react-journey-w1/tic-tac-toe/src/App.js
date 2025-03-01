@@ -8,7 +8,7 @@ function Square({value}) {
     console.log("click action", value)
 
   }
-  return <button className="square">value</button>
+  return <button onClick={handleButtonClick} className="square">value</button>
 }
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
        <Square value="3"/>
        </div>
        <div className="board-row">
-       <Square value="1"/>
-       <Square value="1"/>
+       <Square value="4"/>
+       <Square value=""/>
        <Square value="1"/>
        </div>
        <div className="board-row">
