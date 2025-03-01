@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
+function square() {
+  return <button className="square">1</button>
+}
 function App() {
   return (
     <>
