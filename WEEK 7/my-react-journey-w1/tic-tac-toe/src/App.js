@@ -10,13 +10,13 @@ function App() {
     <>
     <div className="board-row">
        <Square value="1"/>
-       <Square/>
-       <Square/>
+       <Square value="2"/>
+       <Square value="3"/>
        </div>
        <div className="board-row">
-       <Square/>
-       <Square/>
-       <Square/>
+       <Square value="1"/>
+       <Square value="1"/>
+       <Square value="1"/>
        </div>
        <div className="board-row">
        <Square/>
