@@ -24,9 +24,9 @@ function App() {
        <Square value="6"/>
        </div>
        <div className="board-row">
-       <Square/>
-       <Square/>
-       <Square/>
+       <Square value="7"/>
+       <Square value="8"/>
+       <Square value="9"/>
        </div>
     </>
    
