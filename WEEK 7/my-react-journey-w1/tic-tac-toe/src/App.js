@@ -8,7 +8,7 @@ function Square({value}) {
     console.log("click action", value);
 
   }
-  return <button onClick={handleButtonClick} className="square">value</button>
+  return <button onClick={handleButtonClick} className="square">{value}</button>
 }
 function App() {
   return (
