@@ -13,6 +13,7 @@ function App() {
        <button className="square">X</button>
        <button className="square">X</button>
        <button className="square">X</button>
+       </div>
        <button className="square">X</button>
        <button className="square">X</button>
        <button className="square">X</button>
