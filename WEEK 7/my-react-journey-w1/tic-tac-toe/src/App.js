@@ -6,6 +6,7 @@ function Square({value}) {
   const [name, setname] = useState(null);
 
   function handleButtonClick(){
+    setname("X");
     console.log("click action", value);
 
   }
