@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 //Component
-function square() {
+function Square() {
   return <button className="square">1</button>
 }
 function App() {
