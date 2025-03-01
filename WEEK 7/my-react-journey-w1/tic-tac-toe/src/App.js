@@ -5,7 +5,7 @@ import './App.css';
 function Square({value}) {
 
   function handleButtonClick(){
-    console.log("click action", value)
+    console.log("click action", value);
 
   }
   return <button onClick={handleButtonClick} className="square">value</button>
