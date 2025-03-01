@@ -1,38 +1,41 @@
-import {useState} from 'react'
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-//Component
-function Square({value}) {
-  const [name, setname] = useState(null);
+// Component
+function Square() {
+  const [value, setValue] = useState(null); // Track the state of the square
 
-  function handleButtonClick(){
-    setname("X");
-    console.log("click action", value);
-
+  function handleButtonClick() {
+    setValue("X"); // Set value to "X" when clicked
+    console.log("Button clicked", value);
   }
-  return <button onClick={handleButtonClick} className="square">{value}</button>
+
+  return (
+    <button onClick={handleButtonClick} className="square">
+      {value} {/* Show updated value */}
+    </button>
+  );
 }
+
 function App() {
   return (
     <>
-    <div className="board-row">
-       <Square value="1"/>
-       <Square value="2"/>
-       <Square value="3"/>
-       </div>
-       <div className="board-row">
-       <Square value="4"/>
-       <Square value="5"/>
-       <Square value="6"/>
-       </div>
-       <div className="board-row">
-       <Square value="7"/>
-       <Square value="8"/>
-       <Square value="9"/>
-       </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
     </>
-   
-
   );
 }
 
