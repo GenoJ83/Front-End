@@ -3,7 +3,7 @@ for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
 
-//Exercise 2: Print multiplication table
+//Exercise 2: Print a multiplication table
 for (let i = 1; i <= 10; i++) {
     console.log(`5 x ${i} = ${5 * i}`);
 }
