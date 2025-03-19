@@ -47,6 +47,12 @@ function App() {
     return null; // No winner yet
   }
 
+  // Restart the game
+  function restartGame() {
+    setSquares(Array(9).fill(null)); // Reset the squares to null
+    setIsXNext(true); // Reset the turn to "X"
+  }
+
   const winner = calculateWinner(squares); // Check if there's a winner
   const status = winner
     ? `Winner: ${winner}`
@@ -70,6 +76,9 @@ function App() {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
+      <button onClick={restartGame} className="restart-button">
+        Restart Game
+      </button>
     </div>
   );
 }
