@@ -7,10 +7,10 @@ function Fireworks() {
   useEffect(() => {
     // Generate fireworks particles
     const particles = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) { // Increase the number of particles for a more dramatic effect
       const x = Math.random() * window.innerWidth;
       const y = Math.random() * window.innerHeight;
-      const size = Math.random() * 5 + 2; // Random size between 2px and 7px
+      const size = Math.random() * 8 + 2; // Random size between 2px and 10px
       const color = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random bright color
       const duration = Math.random() * 1 + 0.5; // Random duration between 0.5s and 1.5s
 
