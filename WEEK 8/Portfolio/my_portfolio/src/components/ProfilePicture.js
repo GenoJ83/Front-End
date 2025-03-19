@@ -5,7 +5,7 @@ const ProfilePicture = () => {
   return (
     <section>
       <h2>Profile Picture</h2>
-      <img src="Pic 2.jpeg" alt="Profile" className="profile-picture" />
+      <img src="Profile.jpeg" alt="Profile" className="profile-picture" />
     </section>
   );
 };
