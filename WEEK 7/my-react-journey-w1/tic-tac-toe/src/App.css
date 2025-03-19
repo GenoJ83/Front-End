@@ -5,186 +5,206 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f5f7, #e9e9ed);
+  color: #1d1d1f;
+  line-height: 1.6;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
   padding: 20px;
 }
 
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 24px;
   text-align: center;
 }
 
 h2 {
-  font-size: 24px;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 20px;
-  color: #777;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #1d1d1f;
+  margin-bottom: 16px;
 }
 
 h4 {
-  font-size: 18px;
-  color: #888;
-  margin-bottom: 10px;
-}
-
-h5 {
-  font-size: 16px;
-  color: #999;
-  margin-bottom: 10px;
-}
-
-h6 {
-  font-size: 14px;
-  color: #aaa;
-  margin-bottom: 10px;
-}
-
-code {
-  font-family: 'Courier New', monospace;
-  font-size: 1.2em;
-  background-color: #f0f0f0;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-
-ul {
-  padding-inline-start: 20px;
-  list-style-type: none;
-}
-
-.square {
-  background: #fff;
-  border: 2px solid #ddd;
-  border-radius: 8px;
   font-size: 24px;
-  font-weight: bold;
-  line-height: 60px;
-  height: 60px;
-  width: 60px;
-  margin: 4px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+  color: #1d1d1f;
+  margin-bottom: 12px;
 }
 
-.square:hover {
-  background-color: #f9f9f9;
-  transform: scale(1.05);
-}
-
-.square:active {
-  transform: scale(0.95);
-}
-
-.board-row {
-  display: flex;
-  justify-content: center;
-}
-
-.status {
-  font-size: 20px;
-  font-weight: bold;
+p {
+  font-size: 18px;
   color: #333;
   margin-bottom: 20px;
-  text-align: center;
 }
 
-.game {
+a {
+  color: #007aff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005bb5;
+}
+
+/* Navigation */
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+nav a {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d1d1f;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #007aff;
+  transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  border-bottom: 2px solid #007aff;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Cards for Projects or Skills */
+.card {
   background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.game-info {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #555;
-  text-align: center;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.restart-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
   font-size: 16px;
-  font-weight: bold;
+  color: #555;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
   color: #fff;
-  background-color: #4caf50;
+  background: linear-gradient(135deg, #007aff, #0047ab);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.restart-button:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
+.button:hover {
+  background: linear-gradient(135deg, #0063cc, #003d82);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.restart-button:active {
-  transform: scale(0.95);
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Fireworks animation */
-.fireworks {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Ensure it doesn't block clicks */
-  z-index: 1000; /* Make sure it appears above everything */
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  color: #777;
 }
 
-.firework {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ff0;
-  border-radius: 50%;
-  animation: explode 1.5s ease-out forwards;
+footer a {
+  color: #007aff;
 }
 
-@keyframes explode {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
+footer a:hover {
+  color: #005bb5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
     opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Winning square animation */
-@keyframes winAnimation {
-  0% {
-    background-color: #fff;
-  }
-  50% {
-    background-color: #d4edda;
-  }
-  100% {
-    background-color: #fff;
-  }
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.winning-square {
-  animation: winAnimation 1s ease-in-out;
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  nav a {
+    font-size: 16px;
+    margin: 0 10px;
+  }
 }
