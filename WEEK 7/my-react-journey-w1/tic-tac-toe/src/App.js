@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Fireworks from "./Fireworks"; // Import the Fireworks component
 
 // Square Component
 function Square({ value, onSquareClick }) {
@@ -12,54 +13,58 @@ function Square({ value, onSquareClick }) {
 
 // App Component
 function App() {
-  const [squares, setSquares] = useState(Array(9).fill(null)); // Track the state of all squares
-  const [isXNext, setIsXNext] = useState(true); // Track whose turn it is
+  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [isXNext, setIsXNext] = useState(true);
+  const [showFireworks, setShowFireworks] = useState(false); // State for fireworks
 
   // Handle click on a square
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) {
-      return; // If the square is already filled or there's a winner, do nothing
+      return;
     }
-    const newSquares = squares.slice(); // Create a copy of the squares array
-    newSquares[i] = isXNext ? "X" : "O"; // Set the value of the clicked square
-    setSquares(newSquares); // Update the state
-    setIsXNext(!isXNext); // Toggle the turn
+    const newSquares = squares.slice();
+    newSquares[i] = isXNext ? "X" : "O";
+    setSquares(newSquares);
+    setIsXNext(!isXNext);
+
+    // Check for a winner after each move
+    const winner = calculateWinner(newSquares);
+    if (winner) {
+      setShowFireworks(true); // Show fireworks when there's a winner
+      setTimeout(() => setShowFireworks(false), 1500); // Hide fireworks after 1.5 seconds
+    }
   }
 
   // Determine the winner
   function calculateWinner(squares) {
     const lines = [
-      [0, 1, 2], // Top row
-      [3, 4, 5], // Middle row
-      [6, 7, 8], // Bottom row
-      [0, 3, 6], // Left column
-      [1, 4, 7], // Middle column
-      [2, 5, 8], // Right column
-      [0, 4, 8], // Diagonal
-      [2, 4, 6], // Diagonal
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
     ];
     for (let line of lines) {
       const [a, b, c] = line;
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a]; // Return the winner ("X" or "O")
+        return squares[a];
       }
     }
-    return null; // No winner yet
-  }
-
-  // Check for a draw
-  function isDraw(squares) {
-    return squares.every((square) => square !== null) && !calculateWinner(squares);
+    return null;
   }
 
   // Restart the game
   function restartGame() {
-    setSquares(Array(9).fill(null)); // Reset the squares to null
-    setIsXNext(true); // Reset the turn to "X"
+    setSquares(Array(9).fill(null));
+    setIsXNext(true);
+    setShowFireworks(false); // Hide fireworks on restart
   }
 
-  const winner = calculateWinner(squares); // Check if there's a winner
-  const draw = isDraw(squares); // Check if the game is a draw
+  const winner = calculateWinner(squares);
+  const draw = squares.every((square) => square !== null) && !winner;
 
   // Display status
   let status;
@@ -73,6 +78,7 @@ function App() {
 
   return (
     <div className="App">
+      {showFireworks && <Fireworks />} {/* Show fireworks when there's a winner */}
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
