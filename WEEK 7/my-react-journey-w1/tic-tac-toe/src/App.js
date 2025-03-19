@@ -47,6 +47,11 @@ function App() {
     return null; // No winner yet
   }
 
+  // Check for a draw
+  function isDraw(squares) {
+    return squares.every((square) => square !== null) && !calculateWinner(squares);
+  }
+
   // Restart the game
   function restartGame() {
     setSquares(Array(9).fill(null)); // Reset the squares to null
@@ -54,9 +59,17 @@ function App() {
   }
 
   const winner = calculateWinner(squares); // Check if there's a winner
-  const status = winner
-    ? `Winner: ${winner}`
-    : `Next player: ${isXNext ? "X" : "O"}`; // Display status
+  const draw = isDraw(squares); // Check if the game is a draw
+
+  // Display status
+  let status;
+  if (winner) {
+    status = `Winner: ${winner}`;
+  } else if (draw) {
+    status = "It's a draw!";
+  } else {
+    status = `Next player: ${isXNext ? "X" : "O"}`;
+  }
 
   return (
     <div className="App">
