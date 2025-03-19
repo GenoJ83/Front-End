@@ -1,0 +1,47 @@
+:root {
+    --background-color: #121212;
+    --text-color: #f9f9f9;
+    --header-background: #1e1e1e;
+    --accent-color: #4DB6AC;
+    --secondary-text-color: #BBDEFB;
+    --input-background: #2a2a2a;
+    --button-hover: #26A69A;
+  }
+  
+  .light-mode {
+    --background-color: #f9f9f9;
+    --text-color: #121212;
+    --header-background: #e0e0e0;
+    --accent-color: #00796B;
+    --secondary-text-color: #455A64;
+    --input-background: #ffffff;
+    --button-hover: #004D40;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  header {
+    background: var(--header-background);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  header h1 {
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  header p {
+    color: var(--secondary-text-color);
+    font-size: 1.2rem;
+  }
+  
