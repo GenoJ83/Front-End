@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Fireworks from "./Fireworks"; // Import the Fireworks component
+import Fireworks from "./Fireworks"; // Correct import path
 
 // Square Component
 function Square({ value, onSquareClick }) {
