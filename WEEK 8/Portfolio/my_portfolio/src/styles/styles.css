@@ -185,7 +185,98 @@ footer p {
 }
 
 /* Responsive Design */
+/* Large Screens */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1400px;
+    }
+
+    .card {
+        max-width: 1000px;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    main {
+        max-width: 960px;
+        padding: 1.5rem;
+    }
+
+    .card {
+        max-width: 700px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .card h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 1.5rem 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+        margin: 0.75rem 0;
+    }
+
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .button, .toggle-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    header {
+        padding: 1rem 0;
+    }
+
     header h1 {
         font-size: 2rem;
     }
@@ -194,16 +285,141 @@ footer p {
         font-size: 1rem;
     }
 
+    main {
+        padding: 0.75rem;
+    }
+
     .card {
         padding: 1rem;
+        margin: 0.5rem 0;
+        border-radius: 8px;
     }
 
     .card h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
     }
 
     .card p {
         font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .button, .toggle-button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 0.75rem 0;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+
+    /* Adjust table for mobile */
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    /* Adjust code blocks for mobile */
+    pre, code {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        overflow-x: auto;
+    }
+
+    /* Adjust lists for mobile */
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .button, .toggle-button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .button, .toggle-button {
+        display: none;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    header, footer {
+        box-shadow: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-color: #00ff00;
+        --text-color: #ffffff;
+        --background-color: #000000;
+    }
+
+    .light-mode {
+        --accent-color: #0000ff;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
 }
 
