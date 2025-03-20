@@ -1,19 +1,12 @@
 // ProfilePicture.js
 import React from "react";
-import profilePic from "./Profile.jpeg";
 
 const ProfilePicture = () => {
   return (
-    <div className="card">
+    <section>
       <h2>Profile Picture</h2>
-      <div className="profile-image-container">
-        <img 
-          src={profilePic} 
-          alt="Geno Joshua" 
-          className="profile-image"
-        />
-      </div>
-    </div>
+      <img src="Profile.jpeg" alt="Profile" className="profile-picture" />
+    </section>
   );
 };
 
