@@ -19,6 +19,9 @@
     --success-color: #4cd8b2;
     --gradient-start: #112240;
     --gradient-end: #1d2d50;
+    --glass-background: rgba(17, 34, 64, 0.7);
+    --glass-border: rgba(100, 255, 218, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(2, 12, 27, 0.37);
 }
 
 .light-mode {
@@ -40,6 +43,9 @@
     --success-color: #00b894;
     --gradient-start: #ffffff;
     --gradient-end: #f8f9fa;
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(9, 132, 227, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -57,16 +63,24 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(100, 255, 218, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(9, 132, 227, 0.1) 0%, transparent 20%);
+    background-attachment: fixed;
 }
 
 /* Header Styles */
 header {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    padding: 3rem 0;
+    padding: 4rem 0;
     text-align: center;
     box-shadow: var(--card-shadow);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
 }
 
 header::before {
@@ -78,28 +92,37 @@ header::before {
     bottom: 0;
     background: linear-gradient(45deg, rgba(100, 255, 218, 0.1), rgba(9, 132, 227, 0.1));
     z-index: 1;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header h1 {
     color: var(--accent-color);
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 0;
     font-weight: 700;
     letter-spacing: -2px;
     position: relative;
     z-index: 2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
 }
 
 header p {
     color: var(--secondary-text-color);
-    font-size: 1.3rem;
-    margin: 1rem 0 0;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0;
     position: relative;
     z-index: 2;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeInUp 1s ease-out;
 }
 
 /* Main Content */
@@ -108,22 +131,24 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 /* Card Styles */
 .card {
-    background: var(--card-background);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--glass-background);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .card::before {
@@ -135,11 +160,11 @@ main {
     height: 4px;
     background: linear-gradient(90deg, var(--accent-color), var(--link-color));
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px -20px rgba(2, 12, 27, 0.7);
 }
 
@@ -149,9 +174,28 @@ main {
 
 .card h2 {
     color: var(--accent-color);
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.card:hover h2::after {
+    transform: scaleX(1);
 }
 
 .card p {
@@ -165,16 +209,17 @@ main {
     background: linear-gradient(135deg, var(--accent-color), var(--link-color));
     color: var(--background-color);
     border: none;
-    border-radius: 8px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    border-radius: 12px;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.2);
 }
 
 .button::before {
@@ -184,202 +229,73 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.6s;
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
 }
 
 .button:hover::before {
     left: 100%;
 }
 
-.button.delete {
-    background: linear-gradient(135deg, var(--error-color), #ff4757);
-    color: white;
+/* Contact Styles */
+.contact-container {
+    background: var(--glass-background);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Results Table Styles */
-.results-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--card-background);
-    border-radius: 16px;
-    box-shadow: var(--card-shadow);
+.contact-info {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.semester-table {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.semester-table:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px -10px rgba(2, 12, 27, 0.7);
-}
-
-.semester-header {
+.contact-info p {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.semester-header h3 {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 1.5rem 0;
-}
-
-th, td {
+    gap: 1rem;
     padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-th {
-    background: var(--header-background);
-    color: var(--accent-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-td input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid var(--input-border);
-    border-radius: 6px;
-    background: var(--input-background);
-    color: var(--text-color);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-td input:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.1);
-}
-
-.semester-gpa {
-    text-align: right;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 2px solid var(--border-color);
-    font-weight: 600;
-    color: var(--accent-color);
-    font-size: 1.2rem;
-}
-
-.cgpa-section {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
 }
 
-.cgpa-section h3 {
-    color: var(--accent-color);
-    font-size: 2rem;
-    margin: 1rem 0 0;
-    font-weight: 600;
+.contact-info p:hover {
+    transform: translateX(10px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 2rem 0;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    main {
-        padding: 2rem 1rem;
-    }
-
-    .card {
-        padding: 1.5rem;
-    }
-
-    .semester-table {
-        padding: 1.5rem;
-    }
-
-    .semester-header {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-
-    .semester-header button {
-        width: 100%;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-
-    td input {
-        min-width: 120px;
-    }
+.contact-info a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 576px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .card h2 {
-        font-size: 1.5rem;
-    }
-
-    .semester-table {
-        padding: 1rem;
-    }
-
-    th, td {
-        padding: 0.75rem;
-    }
-
-    .cgpa-section {
-        padding: 1.5rem;
-    }
-
-    .cgpa-section h3 {
-        font-size: 1.5rem;
-    }
+.contact-info a:hover {
+    color: var(--link-hover-color);
 }
 
 /* Animations */
-@keyframes fadeIn {
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -390,18 +306,57 @@ td input:focus {
     }
 }
 
-.card, .semester-table {
-    animation: fadeIn 0.5s ease-out forwards;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 0;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+
+    .contact-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .card h2 {
+        font-size: 1.8rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .contact-info p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 }
 
 /* Print Styles */
 @media print {
     body {
-        background-color: white;
-        color: black;
+        background: white;
     }
 
-    .card, .semester-table {
+    .card, .contact-container {
         box-shadow: none;
         border: 1px solid #ddd;
     }
@@ -420,14 +375,12 @@ td input:focus {
 @media (prefers-contrast: high) {
     :root {
         --accent-color: #00ff00;
-        --text-color: #ffffff;
-        --background-color: #000000;
+        --link-color: #00ff00;
     }
 
     .light-mode {
         --accent-color: #0000ff;
-        --text-color: #000000;
-        --background-color: #ffffff;
+        --link-color: #0000ff;
     }
 }
 
@@ -435,8 +388,6 @@ td input:focus {
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
+        animation: none !important;
     }
-}
-}
-}
 }

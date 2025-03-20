@@ -3,12 +3,35 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section>
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
-      <p>GitHub: <a href="https://github.com/GenoJ83" target="_blank">github.com/GenoJ83</a></p>
-    </section>
+    <div className="contact-container">
+      <h2>Contact Me</h2>
+      <div className="contact-info">
+        <p>
+          <strong>Email:</strong>{" "}
+          <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a>
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>{" "}
+          <a
+            href="https://www.linkedin.com/in/genojoshua"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/genojoshua
+          </a>
+        </p>
+        <p>
+          <strong>GitHub:</strong>{" "}
+          <a
+            href="https://github.com/GenoJ83"
+            target="_blank"
+            rel="noreferrer"
+          >
+            github.com/GenoJ83
+          </a>
+        </p>
+      </div>
+    </div>
   );
 };
 
