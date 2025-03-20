@@ -2,16 +2,35 @@
 import React from "react";
 
 const Skills = () => {
-  const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python"];
+  const skills = [
+    { name: "HTML5", level: 90 },
+    { name: "CSS3", level: 85 },
+    { name: "JavaScript", level: 80 },
+    { name: "React", level: 75 },
+    { name: "Node.js", level: 70 },
+    { name: "Python", level: 65 }
+  ];
+
   return (
-    <section>
+    <div className="card">
       <h2>Skills</h2>
-      <ul className="skills-list">
+      <div className="skills-grid">
         {skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <div key={index} className="skill-item">
+            <div className="skill-header">
+              <span className="skill-name">{skill.name}</span>
+              <span className="skill-level">{skill.level}%</span>
+            </div>
+            <div className="skill-bar">
+              <div 
+                className="skill-progress" 
+                style={{ width: `${skill.level}%` }}
+              ></div>
+            </div>
+          </div>
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
   );
 };
 

@@ -1,14 +1,22 @@
 // HobbyVideo.js
 import React from "react";
+import hobbyVideo from "./Hobby.mp4";
 
 const HobbyVideo = () => {
   return (
-    <section>
+    <div className="card">
       <h2>Hobby Video</h2>
-      <video controls width="100%">
-        <source src="Fitness.mp4" type="video/mp4" />
-      </video>
-    </section>
+      <div className="video-container">
+        <video 
+          controls 
+          className="hobby-video"
+          poster="video-poster.jpg"
+        >
+          <source src={hobbyVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
   );
 };
 
