@@ -1,39 +1,100 @@
 // Results.js
-import React from "react";
+import React, { useState } from 'react';
 
 const Results = () => {
-  const courses = [
-    { code: "CS101", title: "Structured Programming", grade: "A", credits: 4 },
-    { code: "CS102", title: "Essential Hardware and Software Concepts", grade: "A", credits: 4 },
-    { code: "CS103", title: "Fundamentals of Computing", grade: "A", credits: 4 },
-    { code: "CS104", title: "Discrete Mathematics", grade: "B", credits: 3 },
-    { code: "CS105", title: "Writing and Study Skills", grade: "B+", credits: 3 },
-    { code: "CS106", title: "Understanding the Old Testament", grade: "A", credits: 3 },
-  ];
+  const [results, setResults] = useState([]);
+  const [newResult, setNewResult] = useState({
+    courseName: '',
+    mark: '',
+    cu: '',
+    gpa: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewResult(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newResult.courseName && newResult.mark && newResult.cu && newResult.gpa) {
+      setResults(prev => [...prev, { ...newResult, id: Date.now() }]);
+      setNewResult({
+        courseName: '',
+        mark: '',
+        cu: '',
+        gpa: ''
+      });
+    }
+  };
 
   return (
-    <section>
-      <h2>Year 1 Semester 1 Results</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Course Code</th>
-            <th>Course Title</th>
-            <th>Grade</th>
-            <th>Credit Units</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses.map((course, index) => (
-            <tr key={index}>
-              <td>{course.code}</td>
-              <td>{course.title}</td>
-              <td>{course.grade}</td>
-              <td>{course.credits}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <section className="results-section">
+      <h2>Semester Results</h2>
+      
+      <form className="add-result-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="courseName"
+          placeholder="Course Name"
+          value={newResult.courseName}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="number"
+          name="mark"
+          placeholder="Mark"
+          value={newResult.mark}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="number"
+          name="cu"
+          placeholder="Credit Units"
+          value={newResult.cu}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="number"
+          name="gpa"
+          placeholder="GPA"
+          value={newResult.gpa}
+          onChange={handleInputChange}
+          required
+        />
+        <button type="submit">Add Result</button>
+      </form>
+
+      {results.length > 0 && (
+        <div className="results-table-container">
+          <table className="results-table">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Mark</th>
+                <th>CU</th>
+                <th>GPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {results.map(result => (
+                <tr key={result.id}>
+                  <td>{result.courseName}</td>
+                  <td>{result.mark}</td>
+                  <td>{result.cu}</td>
+                  <td>{result.gpa}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </section>
   );
 };
