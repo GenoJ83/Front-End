@@ -11,24 +11,25 @@ import Feedback from "./components/Feedback";
 import Contact from "./components/Contact";
 import CareerGoals from "./components/CareerGoals";
 import Footer from "./components/Footer";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Portfolio = () => {
   const [lightMode, setLightMode] = useState(false);
 
   return (
-    <div className={lightMode ? "light-mode" : "dark-mode"}>
+    <div className={lightMode ? "light-mode" : ""}>
       <Header lightMode={lightMode} setLightMode={setLightMode} />
-      <div className="container">
-        <PersonalDetails />
-        <ProfilePicture />
-        <HobbyVideo />
-        <Results />
-        <Skills />
-        <Feedback />
-        <Contact />
-        <CareerGoals />
-      </div>
+      <main>
+        <div className="container">
+          <PersonalDetails />
+          <ProfilePicture />
+          <HobbyVideo />
+          <Results />
+          <Skills />
+          <Feedback />
+          <Contact />
+          <CareerGoals />
+        </div>
+      </main>
       <Footer />
     </div>
   );

@@ -184,6 +184,42 @@ footer p {
     font-size: 0.9rem;
 }
 
+/* Footer Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    transition: transform var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--link-hover-color);
+    transform: translateY(-3px);
+}
+
+/* Container Styles */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Card Grid Layout */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 /* Responsive Design */
 /* Large Screens */
 @media (min-width: 1200px) {
@@ -268,6 +304,12 @@ footer p {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem;
     }
 }
 
