@@ -21,32 +21,36 @@ function App() {
     setIsAuthenticated(success);
   };
 
-  if (!isAuthenticated) {
-    return <Login onLogin={handleLogin} />;
-  }
+  const PortfolioContent = () => (
+    <>
+      <PersonalDetails />
+      <ProfilePicture />
+      <HobbyVideo />
+      <Results />
+      <Skills />
+      <Feedback />
+      <CareerGoals />
+      <Contact />
+      <Footer />
+    </>
+  );
 
   return (
     <Router>
       <div className="app">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={
-              <>
-                <PersonalDetails />
-                <ProfilePicture />
-                <HobbyVideo />
-                <Results />
-                <Skills />
-                <Feedback />
-                <CareerGoals />
-                <Contact />
-                <Footer />
-              </>
-            } />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
+        {isAuthenticated ? (
+          <>
+            <Header />
+            <main className="main-content">
+              <Routes>
+                <Route path="/" element={<PortfolioContent />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
+          </>
+        ) : (
+          <Login onLogin={handleLogin} />
+        )}
       </div>
     </Router>
   );
