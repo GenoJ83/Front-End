@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [credentials, setCredentials] = useState({
     username: '',
     password: ''
@@ -21,8 +21,8 @@ const Login = () => {
     e.preventDefault();
     // For demo purposes, using a simple authentication
     if (credentials.username === 'admin' && credentials.password === 'password') {
-      localStorage.setItem('isAuthenticated', 'true');
-      navigate('/portfolio');
+      onLogin(true);
+      navigate('/');
     } else {
       setError('Invalid credentials. Please try again.');
     }
