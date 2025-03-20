@@ -815,22 +815,35 @@ pre, code {
     font-size: 1.2rem;
 }
 
-/* Contact Container Styles */
+/* Contact Section Styles */
+.contact-section {
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
+.contact-section h2 {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .contact-container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 1rem 0;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.25rem;
     background: var(--input-background);
-    border-radius: 8px;
     border: 1px solid var(--border-color);
+    border-radius: 8px;
     transition: transform var(--transition-speed) ease,
                 box-shadow var(--transition-speed) ease;
 }
@@ -872,25 +885,22 @@ pre, code {
 }
 
 @media (max-width: 576px) {
-    .goals-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .contact-section {
+        padding: 1rem 0;
+        margin: 1rem 0;
     }
 
-    .goal-section {
-        padding: 1rem;
-    }
-
-    .goals-list li {
-        padding: 0.5rem 0;
+    .contact-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
     }
 
     .contact-item {
-        padding: 0.75rem;
+        padding: 1rem;
     }
 
     .contact-item i {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 
     .contact-value {
