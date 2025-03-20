@@ -769,3 +769,131 @@ pre, code {
     color: var(--accent-color);
     min-width: 150px;
 }
+
+/* Goals Container Styles */
+.goals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.goal-section {
+    background: var(--input-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.goal-section h3 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.goals-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.goals-list li:last-child {
+    border-bottom: none;
+}
+
+.goals-list i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Contact Container Styles */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--input-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    width: 2rem;
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-value {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.contact-value:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 576px) {
+    .goals-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .goal-section {
+        padding: 1rem;
+    }
+
+    .goals-list li {
+        padding: 0.5rem 0;
+    }
+
+    .contact-item {
+        padding: 0.75rem;
+    }
+
+    .contact-item i {
+        font-size: 1.2rem;
+    }
+
+    .contact-value {
+        font-size: 1rem;
+    }
+}
