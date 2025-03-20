@@ -7,7 +7,7 @@ const ProfilePicture = () => {
       <div className="profile-container">
         <div className="profile-image-wrapper">
           <img 
-            src="/path-to-your-image.jpg" 
+            src="Profile.jpeg" 
             alt="Profile Picture" 
             className="profile-image"
           />

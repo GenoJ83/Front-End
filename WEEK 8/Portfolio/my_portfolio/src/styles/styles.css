@@ -669,3 +669,219 @@ main {
         font-size: 0.9rem;
     }
 }
+
+/* Profile section styles */
+.profile-section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--card-background);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image-wrapper:hover .profile-overlay {
+    opacity: 1;
+}
+
+.profile-image-wrapper:hover .profile-image {
+    transform: scale(1.05);
+}
+
+/* Skills section styles */
+.skills-section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--card-background);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: var(--glass-background);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+/* Hobby video section styles */
+.hobby-section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--card-background);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+}
+
+.hobby-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hobby-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Feedback section styles */
+.feedback-section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: var(--card-background);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+}
+
+.feedback-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-background);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-container,
+    .hobby-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
