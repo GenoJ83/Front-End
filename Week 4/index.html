@@ -149,7 +149,6 @@
       transform: translateY(-1px);
     }
 
-    /* Improved Dark Mode Toggle */
     .theme-toggle {
       position: relative;
       width: 60px;
@@ -214,7 +213,7 @@
     }
 
     #themeText {
-      display: none; /* Removed text, relying on icons only */
+      display: none;
     }
 
     .auth-links {
@@ -319,9 +318,7 @@
       border-radius: var(--border-radius);
       box-shadow: 0 4px 20px var(--shadow-light);
       margin: 24px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
+      text-align: center; /* Center-align content */
       transition: var(--transition);
     }
 
@@ -333,7 +330,8 @@
       object-fit: cover;
       transition: var(--transition);
       box-shadow: 0 8px 30px var(--shadow-light);
-      flex-shrink: 0;
+      display: block;
+      margin: 0 auto 16px; /* Center the image and add bottom margin */
     }
 
     .profile-picture:hover {
@@ -342,8 +340,7 @@
     }
 
     .profile-info {
-      flex: 1;
-      text-align: left;
+      text-align: center; /* Center-align text */
     }
 
     .profile-name {
@@ -540,7 +537,7 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <h1>My Portfolio</h1>
+          <h1>Student Portfolio Dashboard</h1>
           <div>
             <button class="theme-toggle" id="themeToggle">
               <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -573,7 +570,8 @@
              alt="Profile Picture" 
              class="profile-picture">
         <div class="profile-info">
-          <div class="profile-name">My Profile</div>
+          <div class="profile-name">Geno Owor Joshua</div>
+          <div class="profile-id">Student ID: B20233</div>
           <div class="about-me">
             <h3>About Me</h3>
             <p>I'm passionate about technology and its applications in everyday life. My interests include gaming, fitness, and web development. I enjoy exploring new gaming worlds, staying active through regular workouts, and building innovative web solutions. <span class="highlight">Currently, I am in my second year of study pursuing a Bachelor's of Science in Computer Science</span>, where I'm deepening my knowledge in programming and software development.</p>
