@@ -276,10 +276,10 @@
     .profile-picture {
       width: 240px;
       height: 240px;
-      border-radius: 50%;
+      border-radius: 12px;
       display: block;
       margin: 0 auto 16px;
-      border: 6px solid var(--primary);
+      border: none; /* No blue border */
       object-fit: cover;
       transition: var(--transition);
       box-shadow: 0 8px 30px var(--shadow-light);
@@ -720,8 +720,8 @@
       };
 
       saveToLocalStorage();
-      alert('Account created successfully!');
-      showPage('loginPage');
+      alert('Account created successfully! Please log in.');
+      showPage('loginPage'); // Redirect to login page
     }
 
     function handleLogin(event) {
@@ -828,7 +828,7 @@
             <td><input type="text" value="${result.courseName}" onchange="saveResults()"></td>
             <td><input type="number" value="${result.mark}" min="0" max="100" onchange="calculateGPA(this); saveResults()"></td>
             <td><input type="number" value="${result.cu}" min="1" max="6" onchange="calculateGPA(this); saveResults()"></td>
-            <td><input type="number" value="${result.gpa}" readonly></td>
+             <td><input type="number" value="${result.gpa}" readonly></td>
           `;
           tbody.appendChild(row);
         });
