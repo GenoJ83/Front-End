@@ -20,7 +20,7 @@ const Header = () => {
           aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
         >
           <i className={`fas fa-${isDarkMode ? 'sun' : 'moon'}`}></i>
-        </button>
+      </button>
       </div>
     </header>
   );

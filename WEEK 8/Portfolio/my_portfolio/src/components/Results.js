@@ -74,25 +74,25 @@ const Results = () => {
       {results.length > 0 && (
         <div className="results-table-container">
           <table className="results-table">
-            <thead>
-              <tr>
+        <thead>
+          <tr>
                 <th>Course Name</th>
                 <th>Mark</th>
                 <th>CU</th>
                 <th>GPA</th>
-              </tr>
-            </thead>
-            <tbody>
+          </tr>
+        </thead>
+        <tbody>
               {results.map(result => (
                 <tr key={result.id}>
                   <td>{result.courseName}</td>
                   <td>{result.mark}</td>
                   <td>{result.cu}</td>
                   <td>{result.gpa}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            </tr>
+          ))}
+        </tbody>
+      </table>
         </div>
       )}
     </section>
