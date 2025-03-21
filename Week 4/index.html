@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geno Joshua's Personal Portfolio</title>
+  <meta name="description" content="Geno Joshua's personal portfolio showcasing skills, achievements, and career goals.">
+  <title>Geno Joshua's Portfolio</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     :root {
@@ -143,130 +144,271 @@
       padding: 1rem 0;
       margin-top: 2rem;
     }
+
+    /* Login/Signup/Forgot Password Styles */
+    .auth-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--header-background);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .auth-container h2 {
+      text-align: center;
+    }
+    .auth-container a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    .auth-container a:hover {
+      text-decoration: underline;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid var(--accent-color);
+    }
+    th {
+      background-color: var(--accent-color);
+      color: var(--background-color);
+    }
+    tr:hover {
+      background-color: var(--input-background);
+    }
+    .editable {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Geno Joshua</h1>
-    <p>Welcome to my personal portfolio page!</p>
-    <button class="toggle-button" onclick="toggleMode()">Toggle Mode</button>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Personal Details</h2>
-      <ul>
-        <li>Full Name: Geno Owor Joshua</li>
-        <li>Student ID: B20233</li>
-        <li>Course and Year: Year 2 Computer Science</li>
-        <li>Hobbies and Interests: Gaming, Fitness, and Web Development</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Profile Picture</h2>
-      <img src="Pic 2.jpeg" alt="Profile Picture" class="profile-picture">
-    </section>
-
-    <section>
-      <h2>Hobby Video</h2>
-      <video controls width="100%">
-        <source src="Fitness.mp4" type="video/mp4">
-      </video>
-    </section>
-
-    <section>
-      <h2>Year 1 Semester 1 Results</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Course Code</th>
-            <th>Course Title</th>
-            <th>Grade</th>
-            <th>Credit Units</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CS101</td>
-            <td>Structured Programming</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS102</td>
-            <td>Essential Hardware and Software Concepts</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS103</td>
-            <td>Fundamentals of Computing</td>
-            <td>A</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>CS104</td>
-            <td>Discrete Mathematics</td>
-            <td>B</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>CS105</td>
-            <td>Writing and Study Skills</td>
-            <td>B+</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>CS106</td>
-            <td>Understanding the Old Testament</td>
-            <td>A</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li><i class="fab fa-html5"></i> HTML</li>
-        <li><i class="fab fa-css3-alt"></i> CSS</li>
-        <li><i class="fab fa-js-square"></i> JavaScript</li>
-        <li><i class="fab fa-react"></i> React</li>
-        <li><i class="fab fa-node"></i> Node.js</li>
-        <li><i class="fab fa-python"></i> Python</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Feedback</h2>
-      <form action="server-endpoint" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <textarea name="question" rows="4" placeholder="Ask me something" required></textarea>
-        <div class="button-container">
-          <input type="submit" value="Submit">
-        </div>
-      </form>
-    </section>
-
-    <section>
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
-      <p>GitHub: <a href="https://github.com/GenoJ83" target="_blank">github.com/GenoJ83</a></p>
-    </section>
-
-    <section>
-      <h2>Career Goals</h2>
-      <p>I aim to become a full-stack web developer with a focus on creating innovative and user-friendly web applications. I am passionate about learning new technologies and contributing to impactful projects.</p>
-    </section>
+  <!-- Login Page -->
+  <div id="login-page" class="auth-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div class="button-container">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+    <p>Forgot password? <a href="#" onclick="showForgotPassword()">Reset it</a></p>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Geno Joshua. All rights reserved.</p>
-  </footer>
+  <!-- Signup Page -->
+  <div id="signup-page" class="auth-container" style="display: none;">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <input type="text" id="signup-name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <div class="button-container">
+        <input type="submit" value="Sign Up">
+      </div>
+    </form>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- Forgot Password Page -->
+  <div id="forgot-password-page" class="auth-container" style="display: none;">
+    <h2>Forgot Password</h2>
+    <form id="forgot-password-form">
+      <input type="email" id="forgot-email" placeholder="Email" required>
+      <div class="button-container">
+        <input type="submit" value="Reset Password">
+      </div>
+    </form>
+    <p>Remember your password? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- Dashboard (Portfolio) -->
+  <div id="dashboard" style="display: none;">
+    <header>
+      <h1>Geno Joshua</h1>
+      <p>Welcome to your dashboard!</p>
+      <button class="toggle-button" onclick="toggleMode()">Toggle Mode</button>
+      <button class="toggle-button" onclick="logout()">Logout</button>
+    </header>
+    <div class="container">
+      <!-- Profile Section -->
+      <section>
+        <h2>Profile</h2>
+        <img src="Pic 2.jpeg" alt="Profile Picture" class="profile-picture">
+        <p>Name: <span id="dashboard-name"></span></p>
+        <p>Email: <span id="dashboard-email"></span></p>
+      </section>
+
+      <!-- Semester Results Tables -->
+      <section>
+        <h2>Academic Results</h2>
+        <div id="results-tables">
+          <!-- Tables will be dynamically generated here -->
+        </div>
+        <button class="toggle-button" onclick="saveResults()">Save Results</button>
+      </section>
+
+      <!-- Skills Section -->
+      <section>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li><i class="fab fa-html5"></i> HTML</li>
+          <li><i class="fab fa-css3-alt"></i> CSS</li>
+          <li><i class="fab fa-js-square"></i> JavaScript</li>
+          <li><i class="fab fa-react"></i> React</li>
+          <li><i class="fab fa-node"></i> Node.js</li>
+          <li><i class="fab fa-python"></i> Python</li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section>
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:genojoshua83@gmail.com">genojoshua83@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/genojoshua" target="_blank">linkedin.com/in/genojoshua</a></p>
+        <p>GitHub: <a href="https://github.com/GenoJ83" target="_blank">github.com/GenoJ83</a></p>
+      </section>
+    </div>
+  </div>
 
   <script>
+    // User Data Storage
+    let users = [];
+    let currentUser = null;
+
+    // Show/Hide Pages
+    function showLogin() {
+      document.getElementById('login-page').style.display = 'block';
+      document.getElementById('signup-page').style.display = 'none';
+      document.getElementById('forgot-password-page').style.display = 'none';
+    }
+
+    function showSignup() {
+      document.getElementById('login-page').style.display = 'none';
+      document.getElementById('signup-page').style.display = 'block';
+      document.getElementById('forgot-password-page').style.display = 'none';
+    }
+
+    function showForgotPassword() {
+      document.getElementById('login-page').style.display = 'none';
+      document.getElementById('signup-page').style.display = 'none';
+      document.getElementById('forgot-password-page').style.display = 'block';
+    }
+
+    // Login Functionality
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const user = users.find(u => u.email === email && u.password === password);
+      if (user) {
+        currentUser = user;
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        loadDashboard();
+      } else {
+        alert('Invalid email or password');
+      }
+    });
+
+    // Signup Functionality
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signup-name').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      users.push({ name, email, password, results: {} });
+      alert('Signup successful! Please login.');
+      showLogin();
+    });
+
+    // Forgot Password Functionality
+    document.getElementById('forgot-password-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('forgot-email').value;
+      const user = users.find(u => u.email === email);
+      if (user) {
+        alert('Password reset instructions sent to your email.');
+      } else {
+        alert('Email not found');
+      }
+    });
+
+    // Logout Functionality
+    function logout() {
+      currentUser = null;
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('login-page').style.display = 'block';
+    }
+
+    // Load Dashboard Content
+    function loadDashboard() {
+      // Display user info
+      document.getElementById('dashboard-name').textContent = currentUser.name;
+      document.getElementById('dashboard-email').textContent = currentUser.email;
+
+      // Generate results tables
+      const semesters = [
+        { id: 'year1-sem1', name: 'Year 1 Semester 1' },
+        { id: 'year1-sem2', name: 'Year 1 Semester 2' },
+        { id: 'year2-sem1', name: 'Year 2 Semester 1' },
+        { id: 'year2-sem2', name: 'Year 2 Semester 2' },
+      ];
+
+      const resultsTables = document.getElementById('results-tables');
+      resultsTables.innerHTML = '';
+
+      semesters.forEach(semester => {
+        const table = document.createElement('table');
+        table.innerHTML = `
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Mark</th>
+              <th>CU</th>
+              <th>GPA</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${currentUser.results[semester.id] ? currentUser.results[semester.id].map((row, index) => `
+              <tr>
+                <td contenteditable="true" oninput="updateResult('${semester.id}', ${index}, 'courseName', this.innerText)">${row.courseName}</td>
+                <td contenteditable="true" oninput="updateResult('${semester.id}', ${index}, 'mark', this.innerText)">${row.mark}</td>
+                <td contenteditable="true" oninput="updateResult('${semester.id}', ${index}, 'cu', this.innerText)">${row.cu}</td>
+                <td contenteditable="true" oninput="updateResult('${semester.id}', ${index}, 'gpa', this.innerText)">${row.gpa}</td>
+              </tr>
+            `).join('') : ''}
+          </tbody>
+        `;
+        resultsTables.appendChild(table);
+      });
+    }
+
+    // Update Results Function
+    function updateResult(semesterId, rowIndex, field, value) {
+      if (!currentUser.results[semesterId]) {
+        currentUser.results[semesterId] = [];
+      }
+      if (!currentUser.results[semesterId][rowIndex]) {
+        currentUser.results[semesterId][rowIndex] = {};
+      }
+      currentUser.results[semesterId][rowIndex][field] = value;
+    }
+
+    // Save Results Function
+    function saveResults() {
+      alert('Results saved successfully!');
+      console.log(currentUser.results); // For debugging
+    }
+
+    // Dark Mode Toggle
     function toggleMode() {
       document.body.classList.toggle('light-mode');
     }
