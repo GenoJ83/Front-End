@@ -6,23 +6,28 @@
   <title>Student Portfolio System</title>
   <style>
     :root {
-      --primary: #14b8a6;
-      --primary-dark: #0d9488;
-      --bg-light: #f8fafc;
-      --bg-dark: #111827;
-      --text-light: #334155;
-      --text-dark: #e2e8f0;
+      --primary: #0071e3;
+      --primary-dark: #005bb5;
+      --bg-light: #f5f5f7;
+      --bg-dark: #1d1d1f;
+      --text-light: #1d1d1f;
+      --text-dark: #ffffff;
       --card-light: #ffffff;
-      --card-dark: #1f2937;
-      --error: #ef4444;
+      --card-dark: #2c2c2e;
+      --error: #ff3b30;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-dark: rgba(255, 255, 255, 0.1);
+      --border-radius: 18px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     .dark {
-      --primary: #2dd4bf;
-      --primary-dark: #14b8a6;
-      --bg-light: var(--bg-dark);
-      --text-light: var(--text-dark);
-      --card-light: var(--card-dark);
+      --primary: #0a84ff;
+      --primary-dark: #0071e3;
+      --bg-light: #1d1d1f;
+      --text-light: #ffffff;
+      --card-light: #2c2c2e;
+      --shadow-light: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -32,30 +37,35 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
       background: var(--bg-light);
       color: var(--text-light);
-      line-height: 1.5;
-      transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
+      transition: var(--transition);
       min-height: 100vh;
     }
 
     .container {
-      max-width: 64rem;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 20px;
     }
 
     .auth-container {
-      max-width: 24rem;
-      margin: 4rem auto;
+      max-width: 400px;
+      margin: 60px auto;
     }
 
     header {
       background: var(--card-light);
-      padding: 1rem 0;
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-      margin-bottom: 2rem;
+      padding: 16px 0;
+      box-shadow: 0 2px 10px var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .dark header {
+      background: var(--card-light);
+      box-shadow: 0 2px 10px var(--shadow-light);
     }
 
     .header-content {
@@ -67,106 +77,172 @@
     h1 {
       color: var(--primary);
       font-size: 1.5rem;
+      font-weight: 600;
     }
 
     .auth-card {
       background: var(--card-light);
-      padding: 2rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 20px var(--shadow-light);
+      transition: var(--transition);
     }
 
     .auth-title {
       text-align: center;
-      margin-bottom: 2rem;
-      color: var(--primary);
+      margin-bottom: 24px;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 1.5rem;
     }
 
     .form-group {
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 8px;
       color: var(--text-light);
+      font-weight: 500;
     }
 
     input, select {
       width: 100%;
-      padding: 0.75rem;
-      border: 1px solid var(--primary);
-      border-radius: 0.5rem;
-      background: var(--bg-light);
+      padding: 12px 16px;
+      border: 1px solid #d2d2d7;
+      border-radius: 12px;
+      background: var(--card-light);
       color: var(--text-light);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+    }
+
+    .dark input,
+    .dark select {
+      background: #3a3a3c;
+      border-color: #3a3a3c;
+      color: var(--text-dark);
     }
 
     button {
       width: 100%;
       background: var(--primary);
       color: white;
-      padding: 0.75rem;
+      padding: 12px;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 12px;
       cursor: pointer;
       font-weight: 600;
-      transition: background-color 0.3s;
+      font-size: 1rem;
+      transition: var(--transition);
     }
 
     button:hover {
       background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 16px;
+      width: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 10px;
+    }
+
+    .theme-toggle:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-1px);
     }
 
     .auth-links {
-      margin-top: 1rem;
+      margin-top: 16px;
       text-align: center;
     }
 
     .auth-links a {
       color: var(--primary);
       text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
     }
 
     .auth-links a:hover {
-      text-decoration: underline;
+      opacity: 0.8;
     }
 
     .error-message {
       color: var(--error);
-      margin-top: 0.5rem;
+      margin-top: 8px;
       font-size: 0.875rem;
     }
 
     .results-table {
       width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 1.5rem;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 24px;
+      background: var(--card-light);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px var(--shadow-light);
     }
 
     .results-table th,
     .results-table td {
-      padding: 0.75rem;
-      border: 1px solid var(--primary);
+      padding: 14px 16px;
       text-align: left;
+      border-bottom: 1px solid #d2d2d7;
     }
 
     .results-table th {
       background: var(--primary);
       color: white;
+      font-weight: 600;
+    }
+
+    .dark .results-table th {
+      background: var(--primary-dark);
+    }
+
+    .dark .results-table td {
+      border-color: #3a3a3c;
     }
 
     .results-table td input {
       width: 100%;
-      padding: 0.5rem;
+      padding: 8px;
       border: 1px solid transparent;
       background: transparent;
       color: var(--text-light);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .dark .results-table td input {
+      color: var(--text-dark);
     }
 
     .results-table td input:focus {
       border-color: var(--primary);
       background: var(--bg-light);
-      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+    }
+
+    .dark .results-table td input:focus {
+      background: #3a3a3c;
     }
 
     .hidden {
@@ -177,68 +253,138 @@
       background: transparent;
       border: 1px solid var(--primary);
       color: var(--primary);
+      border-radius: 10px;
+      padding: 8px 16px;
     }
 
     #logoutBtn:hover {
       background: var(--primary);
       color: white;
+      transform: translateY(-1px);
+    }
+
+    .profile-section {
+      background: var(--card-light);
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 20px var(--shadow-light);
+      margin: 24px 0;
+      text-align: center;
+      transition: var(--transition);
     }
 
     .profile-picture {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+      width: 240px;
+      height: 240px;
+      border-radius: 12px;
       display: block;
-      margin: 1.5rem auto;
-      border: 4px solid var(--primary);
+      margin: 0 auto 16px;
+      border: none; /* No blue border */
+      object-fit: cover;
+      transition: var(--transition);
+      box-shadow: 0 8px 30px var(--shadow-light);
+    }
+
+    .profile-picture:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px var(--shadow-light);
+    }
+
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .profile-id {
+      font-size: 1rem;
+      color: #86868b;
+      margin-bottom: 16px;
+    }
+
+    video {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      margin-top: 16px;
+      box-shadow: 0 4px 20px var(--shadow-light);
+      transition: var(--transition);
     }
 
     .skills-list {
       list-style: none;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
     }
 
     .skills-list li {
       display: flex;
       align-items: center;
-      padding: 1rem;
+      padding: 16px;
       background: var(--card-light);
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 20px var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .skills-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px var(--shadow-light);
     }
 
     .skills-list svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-right: 0.75rem;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
       color: var(--primary);
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 32px;
+      margin-top: 24px;
     }
 
     .contact-links a {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
       color: var(--text-light);
       text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
     }
 
     .contact-links a:hover {
       color: var(--primary);
+      transform: translateY(-1px);
     }
 
     .contact-links svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 20px;
+      height: 20px;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text-light);
+    }
+
+    h3 {
+      font-weight: 500;
+      margin: 24px 0 12px;
+      color: var(--text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      color: #86868b;
+      font-size: 0.875rem;
     }
   </style>
 </head>
@@ -316,7 +462,15 @@
       <div class="container">
         <div class="header-content">
           <h1>Student Portfolio Dashboard</h1>
-          <button id="logoutBtn" onclick="handleLogout()">Logout</button>
+          <div>
+            <button class="theme-toggle" id="themeToggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <span id="themeText">Dark Mode</span>
+            </button>
+            <button id="logoutBtn" onclick="handleLogout()">Logout</button>
+          </div>
         </div>
       </div>
     </header>
@@ -332,11 +486,13 @@
         </ul>
       </section>
 
-      <section>
+      <section class="profile-section">
         <h2>Profile Picture</h2>
         <img src="Pic 2.jpeg" 
              alt="Profile Picture" 
              class="profile-picture">
+        <div class="profile-name">Geno Owor Joshua</div>
+        <div class="profile-id">Student ID: B20233</div>
       </section>
       
       <section>
@@ -345,7 +501,6 @@
           <source src="Fitness.mp4" type="video/mp4">
         </video>
       </section>
-  
 
       <section>
         <h2>Academic Results</h2>
@@ -511,19 +666,35 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 Geno Joshua. All rights reserved.</p>
+      <p>© 2025 Geno Joshua. All rights reserved.</p>
     </footer>
   </div>
 
   <script>
-    // Store users and results in memory
-    const users = [];
-    const results = {};
-
-    // Current user session
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    let results = JSON.parse(localStorage.getItem('results')) || {};
     let currentUser = null;
 
-    // Show specific page and hide others
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+        document.getElementById('themeText').textContent = 'Light Mode';
+      }
+
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        document.getElementById('themeText').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      });
+    });
+
+    function saveToLocalStorage() {
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('results', JSON.stringify(results));
+    }
+
     function showPage(pageId) {
       document.querySelectorAll('#authPages > div').forEach(page => {
         page.classList.add('hidden');
@@ -531,7 +702,6 @@
       document.getElementById(pageId).classList.remove('hidden');
     }
 
-    // Handle signup
     function handleSignup(event) {
       event.preventDefault();
       const name = document.getElementById('signupName').value;
@@ -549,11 +719,11 @@
         y1s1: [], y1s2: [], y2s1: [], y2s2: []
       };
 
-      alert('Account created successfully!');
-      showPage('loginPage');
+      saveToLocalStorage();
+      alert('Account created successfully! Please log in.');
+      showPage('loginPage'); // Redirect to login page
     }
 
-    // Handle login
     function handleLogin(event) {
       event.preventDefault();
       const email = document.getElementById('loginEmail').value;
@@ -570,7 +740,6 @@
       }
     }
 
-    // Handle forgot password
     function handleForgotPassword(event) {
       event.preventDefault();
       const email = document.getElementById('resetEmail').value;
@@ -584,7 +753,6 @@
       }
     }
 
-    // Handle logout
     function handleLogout() {
       currentUser = null;
       document.getElementById('dashboard').classList.add('hidden');
@@ -592,7 +760,6 @@
       showPage('loginPage');
     }
 
-    // Add new row to results table
     function addRow(tableId) {
       const tbody = document.querySelector(`#${tableId} tbody`);
       const row = document.createElement('tr');
@@ -605,7 +772,6 @@
       tbody.appendChild(row);
     }
 
-    // Calculate GPA for a row
     function calculateGPA(input) {
       const row = input.parentElement.parentElement;
       const mark = parseFloat(row.cells[1].querySelector('input').value) || 0;
@@ -621,7 +787,6 @@
       row.cells[3].querySelector('input').value = gpa;
     }
 
-    // Save results to memory
     function saveResults() {
       if (!currentUser) return;
 
@@ -633,9 +798,9 @@
       };
 
       results[currentUser.email] = userResults;
+      saveToLocalStorage();
     }
 
-    // Get data from a table
     function getTableData(tableId) {
       const rows = document.querySelectorAll(`#${tableId} tbody tr`);
       return Array.from(rows).map(row => ({
@@ -646,7 +811,6 @@
       }));
     }
 
-    // Load results into tables
     function loadResults() {
       if (!currentUser) return;
 
@@ -664,24 +828,20 @@
             <td><input type="text" value="${result.courseName}" onchange="saveResults()"></td>
             <td><input type="number" value="${result.mark}" min="0" max="100" onchange="calculateGPA(this); saveResults()"></td>
             <td><input type="number" value="${result.cu}" min="1" max="6" onchange="calculateGPA(this); saveResults()"></td>
-            <td><input type="number" value="${result.gpa}" readonly></td>
+             <td><input type="number" value="${result.gpa}" readonly></td>
           `;
           tbody.appendChild(row);
         });
       });
     }
 
-    // Handle feedback form submission
     function handleFeedback(event) {
       event.preventDefault();
       const name = document.getElementById('feedbackName').value;
       const message = document.getElementById('feedbackMessage').value;
       
-      // In a real application, this would send the feedback to a server
       console.log('Feedback received:', { name, message });
       alert('Thank you for your feedback!');
-      
-      // Clear the form
       event.target.reset();
     }
   </script>
