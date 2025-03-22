@@ -35,7 +35,7 @@ function Login({ onLogin }) {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">Login to Your Portfolio</h2>
+        <h2 className="auth-title">Login</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">

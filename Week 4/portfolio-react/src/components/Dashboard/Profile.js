@@ -4,7 +4,7 @@ function Profile() {
   return (
     <section className="profile-section">
       <img 
-        src="/Pic 2.jpeg" 
+        src="/images/Pic 2.jpeg" 
         alt="Geno Joshua" 
         className="profile-picture"
       />

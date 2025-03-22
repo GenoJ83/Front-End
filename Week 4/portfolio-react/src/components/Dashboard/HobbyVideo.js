@@ -5,14 +5,14 @@ function HobbyVideo() {
     <section>
       <h2>My Hobby - Fitness</h2>
       <div className="video-container">
-        <video 
+        <iframe
           className="youtube-video"
-          controls
-          poster="/Pic 3.jpeg"
-        >
-          <source src="/Fitness.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          src="https://www.youtube.com/embed/oYlsmbxTVM4/"
+          title="Fitness Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
         <p className="video-description">
           I'm passionate about fitness and maintaining a healthy lifestyle. 
           This video showcases some of my favorite workout routines and 
