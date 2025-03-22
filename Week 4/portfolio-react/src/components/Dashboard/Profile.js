@@ -5,22 +5,19 @@ function Profile() {
     <section className="profile-section">
       <img 
         src="/Pic 2.jpeg" 
-        alt="Profile Picture" 
+        alt="Geno Joshua" 
         className="profile-picture"
       />
       <div className="profile-info">
+        <h2 className="profile-name">Geno Joshua</h2>
+        <p className="profile-id">Student ID: B20233</p>
         <div className="about-me">
           <h3>About Me</h3>
           <p>
-            I'm passionate about technology and its applications in everyday life. 
-            My interests include gaming, fitness, and web development. I enjoy 
-            exploring new gaming worlds, staying active through regular workouts, 
-            and building innovative web solutions. 
-            <span className="highlight">
-              Currently, I am in my second year of study pursuing a Bachelor's of 
-              Science in Computer Science
-            </span>, where I'm deepening my knowledge in programming and software 
-            development.
+            I am a passionate <span className="highlight">technology enthusiast</span> with a keen interest in 
+            <span className="highlight"> gaming</span>, <span className="highlight">fitness</span>, and 
+            <span className="highlight"> web development</span>. Currently pursuing my Bachelor's of Science in 
+            Computer Science, I combine my academic knowledge with practical skills to create engaging digital experiences.
           </p>
         </div>
       </div>
