@@ -14,9 +14,8 @@ function HobbyVideo() {
           allowFullScreen
         />
         <p className="video-description">
-          I'm passionate about fitness and maintaining a healthy lifestyle. 
-          This video showcases some of my favorite workout routines and 
-          demonstrates my commitment to physical well-being.
+          I'm passionate about gaming. 
+          This video showcases a gameplay of one of my favourite games.
         </p>
       </div>
     </section>
