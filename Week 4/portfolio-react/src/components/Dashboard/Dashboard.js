@@ -5,6 +5,7 @@ import Results from './Results';
 import Skills from './Skills';
 import Contact from './Contact';
 import Feedback from './Feedback';
+import HobbyVideo from './HobbyVideo';
 import Footer from '../Layout/Footer';
 
 function Dashboard({ currentUser, onLogout }) {
@@ -23,13 +24,10 @@ function Dashboard({ currentUser, onLogout }) {
         </section>
 
         <Profile />
-
+        <HobbyVideo />
         <Results currentUser={currentUser} />
-
         <Skills />
-
         <Contact />
-
         <Feedback />
 
         <button id="logoutBtn" onClick={onLogout}>Logout</button>
