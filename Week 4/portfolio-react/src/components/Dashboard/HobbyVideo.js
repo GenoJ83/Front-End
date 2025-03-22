@@ -7,7 +7,7 @@ function HobbyVideo() {
       <div className="video-container">
         <iframe
           className="youtube-video"
-          src="https://www.youtube.com/embed/oYlsmbxTVM4/"
+          src="https://www.youtube.com/embed/oYlsmbxTVM4/" //video from youtube
           title="Fitness Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
