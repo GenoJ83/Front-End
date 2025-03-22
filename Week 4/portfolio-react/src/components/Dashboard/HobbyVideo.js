@@ -3,7 +3,7 @@ import React from 'react';
 function HobbyVideo() {
   return (
     <section>
-      <h2>My Hobby - Fitness</h2>
+      <h2>My Hobby - Gaming</h2>
       <div className="video-container">
         <iframe
           className="youtube-video"
