@@ -6,8 +6,11 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import './styles/styles.css';
 
-import{BrowserRouter, Routes, Route, Navigate} from 'react';
-/*function App() {
+// Duplicate import removed
+// import { BrowserRouter, Routes, Route, Navigate } from 'react';
+
+/*
+function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   const handleLogin = (user) => {
@@ -23,8 +26,8 @@ import{BrowserRouter, Routes, Route, Navigate} from 'react';
   };
 */
   return (
-    <Router>
-      <div className="App">
+   /* <Router>
+     <div className="App">
         <Routes>
           <Route 
             path="/login" 
@@ -61,7 +64,7 @@ import{BrowserRouter, Routes, Route, Navigate} from 'react';
           />
         </Routes>
       </div>
-    </Router>
+    </Router> */
   );
 }
 
