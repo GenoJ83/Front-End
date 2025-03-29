@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import './styles/styles.css';
 
 // Duplicate import removed
-import { BrowserRouter, Routes, Route, Navigate } from 'react';
+
 
 
 function App() {
