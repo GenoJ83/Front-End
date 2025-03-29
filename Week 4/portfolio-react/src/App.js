@@ -9,9 +9,9 @@ import './styles/styles.css';
 // Duplicate import removed
 import { BrowserRouter, Routes, Route, Navigate } from 'react';
 
-/*
+
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+ /* const [currentUser, setCurrentUser] = useState(null);
 
   const handleLogin = (user) => {
     setCurrentUser(user);
@@ -66,6 +66,6 @@ function App() {
       </div>
     </Router> */
   );
-
+}
 
 export default App;
