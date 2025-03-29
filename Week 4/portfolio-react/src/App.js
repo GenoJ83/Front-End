@@ -6,9 +6,6 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import './styles/styles.css';
 
-// Duplicate import removed
-
-
 
 function App() {
  /* const [currentUser, setCurrentUser] = useState(null);
