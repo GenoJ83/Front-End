@@ -6,6 +6,7 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import './styles/styles.css';
 
+import{BrowserRouter, Routes, Route, Navigate} from 'react';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
