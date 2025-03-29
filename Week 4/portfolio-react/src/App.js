@@ -7,7 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import './styles/styles.css';
 
 import{BrowserRouter, Routes, Route, Navigate} from 'react';
-function App() {
+/*function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   const handleLogin = (user) => {
@@ -21,7 +21,7 @@ function App() {
   const handleLogout = () => {
     setCurrentUser(null);
   };
-
+*/
   return (
     <Router>
       <div className="App">
