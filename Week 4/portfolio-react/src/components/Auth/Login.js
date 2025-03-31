@@ -22,7 +22,7 @@ function Login({ onLogin }) {
     // Getting users from localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
     
-    // Find user
+    // Finding user
     const user = users.find(u => u.email === formData.email && u.password === formData.password);
     
     if (user) {
