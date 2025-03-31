@@ -19,7 +19,7 @@ function Login({ onLogin }) {
     e.preventDefault();
     setError('');
 
-    // Get users from localStorage
+    // Getting users from localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
     
     // Find user
